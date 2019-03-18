@@ -1,0 +1,214 @@
+﻿@{
+    Layout = "~/_SiteLayout.cshtml";
+    Page.Title = "Home Page";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@Page.Title.</h1>
+                <h2>Modify this template to jump-start your ASP.NET Web Pages application.</h2>
+            </hgroup>
+            <p>
+                To learn more about ASP.NET Web Pages, visit
+                <a href="https://asp.net/webpages" title="ASP.NET Web Pages Website">https://asp.net/webpages</a>.
+                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET Web Pages.
+                If you have any questions about ASP.NET Web Pages, visit
+                <a href="https://forums.iis.net/1166.aspx" title="ASP.NET Web Pages Forum">our forums</a>.
+            </p>
+        </div>
+    </section>
+}
+
+<div id="myfirstname"></div>
+
+<div name="mylastname"></div>
+<span class="cusomerrormessage"></span>
+
+<table border="1">
+    <tr>
+        <td> User Name </td>
+        <td> <input type="text" id="textUserName" value="Srinath" />  </td>
+    </tr>
+    <tr>
+        <td> PassWord </td>
+        <td> <input type="password" id="textPassWord" /> </td>
+    </tr>
+    <tr>
+        <td colspan="2"> <input type="button" id="btnLogin" value="login" /> </td>
+    </tr>
+</table>
+@*Create a form with id=myform
+add a table wich should contain username , email , country input tags
+
+
+put a save button in table
+
+add validation message containers*@
+
+
+<form id="myForm" name="myForm" onsubmit="return(validateFrom())">
+    <table border="1">
+        <tr>
+            <td> User Name </td>
+            <td> <input type="text" id="textUserName" name="textUserName" />  </td>
+        </tr>
+        <tr>
+            <td> Email </td>
+            <td> <input type="email" id="textEmail" /> </td>
+        </tr>
+        <tr>
+            <td> country</td>
+            <td> <select id="ddlCountry" name="ddlCountry" > <option value="1"> UK </option><option value="2"> Ind </option> </select> </td>
+        </tr>
+        <tr>
+            <td colspan="2"> <input type="submit" id="formsubmit" value="save" /> </td>
+        </tr>
+    </table>
+
+
+
+</form>
+
+
+
+
+<h3>We suggest the following:</h3>
+
+Table
+
+<table>
+    <thead>
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                Address
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                Srinath
+            </td>
+            <td>US</td>
+        </tr>
+        <tr><td>Anu</td><td>India</td></tr>
+    </tbody>
+</table>
+
+<button id="btnDone" type="button" onclick="myfunction()">Go</button>
+<ol class="round">
+    <li class="one">
+        <h5>Getting Started</h5>
+        ASP.NET Web Pages and the new Razor syntax provide a fast, approachable, and lightweight way to combine server code with HTML
+        to create dynamic web content. Connect to databases, add video, link to social networking sites, and include many more features
+        that let you create beautiful sites using the latest web standards.
+        <a href="https://go.microsoft.com/fwlink/?LinkId=245139">Learn more…</a>
+    </li>
+
+    <li class="two">
+        <h5>Add NuGet packages and jump start your coding</h5>
+        NuGet makes it easy to install and update free libraries and tools.
+        <a href="https://go.microsoft.com/fwlink/?LinkId=245140">Learn more…</a>
+    </li>
+
+    <li class="three">
+        <h5>Find Web Hosting</h5>
+        You can easily find a web hosting company that offers the right mix of features and price for your applications.
+        <a href="https://go.microsoft.com/fwlink/?LinkId=245143">Learn more…</a>
+    </li>
+</ol>
+<h2>Data Types</h2>
+<ul>
+    <li>
+        Number
+    </li>
+    <li>
+        Boolean
+    </li>
+    <li>
+        Strings
+    </li>
+    <li>
+        Null
+    </li>
+    <li>
+        Undefined
+    </li>
+</ul>
+<div id="error" class="float-right" style="color:red"></div>
+<div id="msg" style="color:green"></div>
+@*<input type="text" id="txtFirstName" onkeypress="displaymsg()" />*@
+@*<input type="text" id="txtFirstName" onkeydown="displaymsg()" />*@
+<br />
+
+@*<input type="text" id="txtFirstName" onkeyup="displaymsg()" />*@
+<input type="text" id="txtFirstName" onblur="displaymsg()" />
+@*<input type="text" id="txtFirstName" onmouseover="displaymsg()" />*@
+
+
+<select>
+    <option>
+        hello
+    </option>
+    <option>
+        one
+    </option>
+</select>
+<input type="text" id="txtLastName" onblur="displaymsg()" />
+
+<button id="btnGo" type="button" onclick="add(3,4)">Go</button>
+<button id="btnGo" type="button" onclick="calculate()">Calculate</button>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/JavaScript.js"></script>
+<script type="text/javascript">
+                                        //document.write('hello');
+
+                                        //// get element by id
+
+                                        //var element = document.getElementById('error');  // //$('#error') ,  $('.mycustomclass')
+                                        //element.innerHTML = "Error msg";
+
+
+                                        //function display() {
+                                        //    console.log('value from function');
+
+                                        //    // types
+                                        //    var obj = {};
+                                        //    var num = 1;
+                                        //    var value = "srinath";
+                                        //    var var1;
+                                        //    if (var1 != undefined) {
+                                        //        // code
+                                        //    }
+                                        //    return 'hello from function';
+                                        //}
+
+                                        //function add(Number1, Number2) {
+                                        //    alert(Number1 + Number2);
+                                        //}
+                                        ////global variables
+                                        //var globalAmount = 500;
+                                        //function calculate() {
+                                        //    var localResult;
+                                        //    console.log(globalAmount);
+                                        //    console.log(localResult);
+                                        //}
+
+                                        //// arrays
+
+                                        //var names = new Array(10);
+                                        //names[0] = 'hyderabad';
+                                        //names[2] = 'eluru';
+                                        //names[5] = 'telangana';
+
+                                        //console.log('<br> names[0]' + names[0]);
+                                        //console.log('<br> names[4]' + names[4]);
+
+
+
+</script>

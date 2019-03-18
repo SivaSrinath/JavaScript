@@ -1,0 +1,71 @@
+﻿@{
+    Layout = "~/_SiteLayout.cshtml";
+    Page.Title = "About";
+}
+<style type="text/css">
+    .newcolor {
+        color: aqua;
+    }
+</style>
+
+@*<div id="inlineEventDiv" onmousewheel="scrolled()">Scroll here</div>*@
+
+<body onload="load();">
+    <div id="over">dynamic over</div>
+
+</body>
+<p id="mainp">I am in mainP id</p>
+<button id="butngo" name="butngo" onclick="pclick()">Add New Element</button>
+
+<button id="butshow" name="butshow" onclick="show()">show</button>
+<button id="butnhide" name="butnhide" onclick="hide()">hide</button>
+
+
+<aside>
+    <h3>Aside Title</h3>
+    <p>
+        Use this area to provide additional information.
+    </p>
+    <ul>
+        <li><a href="~/">Home</a></li>
+        <li><a href="~/About">About</a></li>
+        <li><a href="~/Contact">Contact</a></li>
+    </ul>
+</aside>
+
+<script type="text/javascript">
+
+    function load() {
+        document.getElementById("over").addEventListener("mouseover", scrolled);
+
+    }
+    function scrolled() {
+        alert('you scrolled here..')
+    }
+
+    function pclick() {
+        var newElement = document.createElement("div");
+        var newElement2 = document.createElement("span");
+        var textNode = document.createTextNode("new text");
+        var textNode2 = document.createTextNode("This is third level");
+        newElement.appendChild(textNode);
+        newElement2.appendChild(textNode2);
+        document.getElementById("mainp").appendChild(newElement);
+        document.getElementById("mainp").appendChild(newElement2);
+        var newP = document.getElementById("mainp");
+        newP.style.fontSize = "100px";
+        newP.className = "newcolor";
+      //  newP.style.display = "none";
+
+    }
+
+    function show() {
+        document.getElementById("mainp").style.display = "block";  // to show
+
+    }
+    function hide() {
+        document.getElementById("mainp").style.display = "none"; //to hide
+
+    }
+
+</script>
